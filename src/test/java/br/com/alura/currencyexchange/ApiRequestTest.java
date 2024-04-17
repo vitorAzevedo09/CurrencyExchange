@@ -1,6 +1,7 @@
 package br.com.alura.currencyexchange;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,9 @@ public class ApiRequestTest {
 
   @Test
   public void whenRequestURL_then200() {
-    int statusCode = apiRequest.request();
-    assertEquals(200, statusCode);
+    CurrencyExchangeResponse response = apiRequest.getConversionCurrencyFromBaseToTarget("USD", "BRL");
+    assertNotEquals(response, null);
+    assertEquals(response.base_code(), "USD");
+    assertEquals(response.target_code(), "BRL");
   }
 }
