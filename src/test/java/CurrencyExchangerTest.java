@@ -2,11 +2,10 @@ package br.com.alura.currencyexchange;
 
 import org.junit.jupiter.api.Test;
 
-class MainTest {
+class CurrencyExchangerTest {
 
   @Test
-  private void testd_requesting_currencies() {
+  public void testApiRequest() {
 
   }
-
 }
