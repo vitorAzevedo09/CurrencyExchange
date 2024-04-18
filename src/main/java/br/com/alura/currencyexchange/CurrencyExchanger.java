@@ -21,4 +21,8 @@ class CurrencyExchanger {
     return response.conversion_rate();
 
   }
+
+  public BigDecimal convert(String baseCode, String targetCode, BigDecimal amount) {
+    return amount.multiply(getConversionRate(baseCode, targetCode));
+  }
 }

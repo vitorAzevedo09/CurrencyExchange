@@ -18,6 +18,10 @@ public class ApiRequest {
     this.url = System.getProperty("apiUrl");
   }
 
+  ApiRequest(String apiUrl) {
+    this.url = apiUrl;
+  }
+
   public CurrencyExchangeResponse getConversionCurrencyFromBaseToTarget(String baseCode, String targetCode) {
 
     HttpRequest request = buildRequest(baseCode, targetCode); // building the request
@@ -37,6 +41,7 @@ public class ApiRequest {
 
   private HttpRequest buildRequest(String baseCode, String targetCode) {
     String pair_url = String.format(url + "/pair/%s/%s", baseCode, targetCode); // building the url
+    System.out.println(pair_url);
 
     return HttpRequest.newBuilder()
         .uri(URI.create(pair_url))
