@@ -41,7 +41,6 @@ public class ApiRequest {
 
   private HttpRequest buildRequest(String baseCode, String targetCode) {
     String pair_url = String.format(url + "/pair/%s/%s", baseCode, targetCode); // building the url
-    System.out.println(pair_url);
 
     return HttpRequest.newBuilder()
         .uri(URI.create(pair_url))
